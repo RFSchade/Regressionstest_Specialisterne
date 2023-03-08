@@ -4,3 +4,6 @@
 
 # Ignore data in the 'Data' folder
 Data/*Con*
+
+# Ignore the markdown because it is messy 
+Markdowns/*.Rmd
