@@ -1,0 +1,14 @@
+"";"statistic";"value"
+"1";"Number of by-variables";0
+"2";"Number of non-by variables in common";1277
+"3";"Number of variables compared";1277
+"4";"Number of variables in x but not y";0
+"5";"Number of variables in y but not x";0
+"6";"Number of variables compared with some values unequal";118
+"7";"Number of variables compared with all values equal";1159
+"8";"Number of observations in common";353
+"9";"Number of observations in x but not y";0
+"10";"Number of observations in y but not x";0
+"11";"Number of observations with some compared variables unequal";27
+"12";"Number of observations with all compared variables equal";326
+"13";"Number of values unequal";1173
