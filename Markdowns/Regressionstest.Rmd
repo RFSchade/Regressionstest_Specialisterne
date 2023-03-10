@@ -7,7 +7,6 @@ output: github_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-knitr::opts_knit$set(root.dir = "..")
 ```
 
 ```{r, include=FALSE}
@@ -23,10 +22,10 @@ Next, I do an examination of the individual variables to check if there are any 
 
 ```{r, results='hide', message=FALSE, warning=FALSE}
 # Load Consistency 1_0_0
-con_00 <- read_csv2("Data/Consistency 1_0_0.csv")
+con_00 <- read_csv2("../Data/Consistency 1_0_0.csv")
 
 # Load Consistency 1_0_1
-con_01 <- read_csv2("Data/Consistency 1_0_1.csv")
+con_01 <- read_csv2("../Data/Consistency 1_0_1.csv")
 
 ```
 
@@ -129,7 +128,7 @@ print(
 # Which columns are different? 
 diff_col <- setdiff(colnames(clean_00), colnames(clean_01))
 # Write to txt
-file <- file.path("output", "100_vs_101", "missing_col.csv")
+file <- file.path("..", "output", "100_vs_101", "missing_col.csv")
 write.csv2(as_tibble(diff_col), file = file)
 
 ```
@@ -177,13 +176,13 @@ diff_byrow <- as_tibble(d$diffs.table) %>% select(1:5)
 colnames(diff_byrow) <- c("col_100", "col_101", "row_name", "value_100", "value_101")
 
 # Let's save them to csv
-file_1 <- file.path("output", "100_vs_101", "summary_table.csv")
+file_1 <- file.path("..", "output", "100_vs_101", "summary_table.csv")
 write.csv2(summary_table, file = file_1)
 #
-file_2 <- file.path("output", "100_vs_101", "diff_by_col.csv")
+file_2 <- file.path("..", "output", "100_vs_101", "diff_by_col.csv")
 write.csv2(diff_byvar, file = file_2)
 # 
-file_3 <- file.path("output", "100_vs_101", "diff_by_row.csv")
+file_3 <- file.path("..", "output", "100_vs_101", "diff_by_row.csv")
 write.csv2(diff_byrow, file = file_3)
 
 
@@ -291,6 +290,11 @@ print(
 # > I was right! The difference is so small that comparedf() does not pick up on it! 
 # > At least not with its default sensitivety. 
 # > Though it can be discussed whether differences that small are even important - or maybe artfacts of calculation. 
+
+# Let's get a list of the columns
+sum_diff <- as_tibble(which(sums_00 != sums_01) %>% names())
+file_4 <- file.path("..", "output", "100_vs_101", "sum_diff.csv")
+write.csv2(sum_diff, file = file_4)
 
 
 ```
