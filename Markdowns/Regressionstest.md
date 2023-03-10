@@ -5,9 +5,9 @@ Rebecca Folmer Schade
 
 I have tried to do a regression test in two different ways: First I
 compare the two data sets directly - Are they the same? Where are they
-different? Next, I do an examination of the individual variables to
-check if there are any outliers - and which of these outliers are one of
-the differences between the two data sets.
+different?
+
+Then, I calculate the sum of each column and compare that.
 
 ### Load data
 
